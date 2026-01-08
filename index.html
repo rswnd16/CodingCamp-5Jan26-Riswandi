@@ -5,21 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List - Wannn</title>
 
-    CSS External
+    <!-- CSS External -->
     <link rel="stylesheet" href="css\styles.css">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-Header
-<Header></Header>
+<body style="align-content: center; justify-items: center; height: 100vh;">
+<!-- Header -->
+<header>
+    <h1 class="text font-bold text-xl"> To Do List - Wannn</h1>
+</header>
 
+<!-- Main -->
+<main>
+    <!-- Form Sectio -->
+     <section>
+        <form>
+            <!-- To Do Input -->
+            <input class="border rounded p-2" type="text" id="todo-input" placeholder="Add a new task..." required>
+            <!-- Date Input -->
+            <input class="border rounded p-2" type="date" id="todo-date" placeholder="Enter due date" required>
+            <!-- Add Button -->
+            <button onclick="addanewtask()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" id="add-button">Add To Do</button>
+        </form>
+     </section>
 
-Main
-<main></main>
+    <!-- Action Section -->
+    <section class="flex pt-2 justify-between">
+        <!-- Clear All Button -->
+        <button onclick="clearalltasks()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" id="clear-completed-button">Clear All To Do</button>
+        <!-- Filter Options -->
+        <div>
+            <label for="filter">Filter: </label>
+            <select id="filter" class="border rounded p-2">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div> 
+        <br>
+    <!-- To Do List Section -->
+    <section class="pt-2">
+        <header>
+            <h1 class="text-2xl font-bold">To Do List</h1>
+        </header>
+        <ul class="pt-2" id="todo-list">
+            <!-- To Do Items will be dynamically added here -->
+             <ul>No To Dos Available</ul>
+        </ul> 
+    </section>
 
-Footer
-<footer></footer>
+</main>
 
-    JS External
+<!-- Footer -->
+<footer>
+    <p class="text-center text-gray-500 text-xs">
+        &copy;2026 Wannn. All rights reserved.
+    </p>
+</footer>
+
+    <!-- JS External -->
     <script src="js\script.js"></script>
     
 </body>
